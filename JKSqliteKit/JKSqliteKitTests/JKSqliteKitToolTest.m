@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "JKSqliteKit.h"
+#import "JKSqliteDatabase.h"
 #import "Student.h"
 #import "JKSqliteModelTool.h"
 @interface JKSqliteKitToolTest : XCTestCase
@@ -27,7 +27,7 @@
 - (void)testExample {
     
     //NSString *sql = @"create table if not exists student(id integer primary key autoincrement,name text not null,age integer,score real)";
-    //BOOL result = [JKSqliteKit deal:sql witUid:@""];
+    //BOOL result = [JKSqliteDatabase deal:sql witUid:@""];
     //XCTAssertEqual(result, YES);
     
     
@@ -40,7 +40,7 @@
 -(void)testQuary{
    
     NSString *sql = @"select * from student";
-    NSMutableArray *result = [JKSqliteKit querySql:sql witUid:@"1"];
+    NSMutableArray *result = [JKSqliteDatabase querySql:sql witUid:@"1"];
     
     NSLog(@"%@",result);
     

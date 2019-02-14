@@ -15,7 +15,6 @@
 		E221BE0822140529002B8168 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E221BE0722140529002B8168 /* main.m */; };
 		E221BE1222140529002B8168 /* JKSqliteKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E221BE1122140529002B8168 /* JKSqliteKitTests.m */; };
 		E221BE1D2214052A002B8168 /* JKSqliteKitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E221BE1C2214052A002B8168 /* JKSqliteKitUITests.m */; };
-		E221BE2D221406CE002B8168 /* JKSqliteKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E221BE2C221406CE002B8168 /* JKSqliteKit.m */; };
 		E221BE3022140708002B8168 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E221BE2F22140708002B8168 /* libsqlite3.0.tbd */; };
 		E221BE77221467FB002B8168 /* JKSqliteKitToolTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E221BE76221467FB002B8168 /* JKSqliteKitToolTest.m */; };
 		E2342E152214FEF2002AE0D7 /* JKSqliteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E2342E142214FEF2002AE0D7 /* JKSqliteModel.m */; };
@@ -24,6 +23,7 @@
 		E2342E1D22150783002AE0D7 /* JKSqliteModelToolTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E2342E1C22150783002AE0D7 /* JKSqliteModelToolTest.m */; };
 		E2EE33382215416F00DA61FF /* JKSqliteTableTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EE33372215416F00DA61FF /* JKSqliteTableTool.m */; };
 		E2EE333A2215454300DA61FF /* JKSqliteTableToolTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EE33392215454300DA61FF /* JKSqliteTableToolTest.m */; };
+		E2EE33B92215B3C200DA61FF /* JKSqliteDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EE33B82215B3C200DA61FF /* JKSqliteDatabase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +60,6 @@
 		E221BE182214052A002B8168 /* JKSqliteKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JKSqliteKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E221BE1C2214052A002B8168 /* JKSqliteKitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKSqliteKitUITests.m; sourceTree = "<group>"; };
 		E221BE1E2214052A002B8168 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E221BE2B221406CE002B8168 /* JKSqliteKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKSqliteKit.h; sourceTree = "<group>"; };
-		E221BE2C221406CE002B8168 /* JKSqliteKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKSqliteKit.m; sourceTree = "<group>"; };
 		E221BE2F22140708002B8168 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		E221BE76221467FB002B8168 /* JKSqliteKitToolTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKSqliteKitToolTest.m; sourceTree = "<group>"; };
 		E2342E132214FEF2002AE0D7 /* JKSqliteModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKSqliteModel.h; sourceTree = "<group>"; };
@@ -75,6 +73,8 @@
 		E2EE33362215416F00DA61FF /* JKSqliteTableTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKSqliteTableTool.h; sourceTree = "<group>"; };
 		E2EE33372215416F00DA61FF /* JKSqliteTableTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKSqliteTableTool.m; sourceTree = "<group>"; };
 		E2EE33392215454300DA61FF /* JKSqliteTableToolTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKSqliteTableToolTest.m; sourceTree = "<group>"; };
+		E2EE33B72215B3C200DA61FF /* JKSqliteDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKSqliteDatabase.h; sourceTree = "<group>"; };
+		E2EE33B82215B3C200DA61FF /* JKSqliteDatabase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKSqliteDatabase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,8 +167,8 @@
 		E221BE2A22140565002B8168 /* JKSqliteKit */ = {
 			isa = PBXGroup;
 			children = (
-				E221BE2B221406CE002B8168 /* JKSqliteKit.h */,
-				E221BE2C221406CE002B8168 /* JKSqliteKit.m */,
+				E2EE33B72215B3C200DA61FF /* JKSqliteDatabase.h */,
+				E2EE33B82215B3C200DA61FF /* JKSqliteDatabase.m */,
 				E2342E132214FEF2002AE0D7 /* JKSqliteModel.h */,
 				E2342E142214FEF2002AE0D7 /* JKSqliteModel.m */,
 				E2342E192215031D002AE0D7 /* JKSqliteModelTool.h */,
@@ -320,11 +320,11 @@
 			files = (
 				E221BDFD22140529002B8168 /* ViewController.m in Sources */,
 				E221BE0822140529002B8168 /* main.m in Sources */,
+				E2EE33B92215B3C200DA61FF /* JKSqliteDatabase.m in Sources */,
 				E2342E1B2215031D002AE0D7 /* JKSqliteModelTool.m in Sources */,
 				E2EE33382215416F00DA61FF /* JKSqliteTableTool.m in Sources */,
 				E221BDFA22140528002B8168 /* AppDelegate.m in Sources */,
 				E2342E152214FEF2002AE0D7 /* JKSqliteModel.m in Sources */,
-				E221BE2D221406CE002B8168 /* JKSqliteKit.m in Sources */,
 				E2342E182214FF11002AE0D7 /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

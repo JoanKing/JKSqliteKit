@@ -9,7 +9,7 @@
 #import "JKSqliteModelTool.h"
 #import "JKSqliteModel.h"
 // sql语句执行
-#import "JKSqliteKit.h"
+#import "JKSqliteDatabase.h"
 // 操作表的类
 #import "JKSqliteTableTool.h"
 @implementation JKSqliteModelTool
@@ -43,7 +43,7 @@
     // 1.2、获取一个模型里面所有的字段名字，以及类型
     NSString *createTableSql = [NSString stringWithFormat:@"create table if not exists %@(%@, primary key(%@))",tableName,[JKSqliteModel columnNamesAndTypesStr:cls],primaryKey];
     // 2、执行(返回是否创建成功)
-    return [JKSqliteKit deal:createTableSql witUid:uid];
+    return [JKSqliteDatabase deal:createTableSql witUid:uid];
 }
 
 /**
@@ -130,7 +130,7 @@
     [execSqls addObject:renameTmpTableNameSqlStr];
     
     // 7.执行上面的sql 语句
-    return [JKSqliteKit dealSqls:execSqls witUid:uid];
+    return [JKSqliteDatabase dealSqls:execSqls witUid:uid];
 }
 
 @end

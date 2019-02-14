@@ -1,21 +1,24 @@
 //
-//  JKSqliteKit.m
+//  JKSqliteDatabase.m
 //  JKSqliteKit
 //
-//  Created by 王冲 on 2019/2/13.
+//  Created by 王冲 on 2019/2/14.
 //  Copyright © 2019年 JK科技有限公司. All rights reserved.
 //
 
-#import "JKSqliteKit.h"
+#import "JKSqliteDatabase.h"
+
 #import "sqlite3.h"
 
 // #define JKSqliteCachePath [NSHomeDirectory() stringByAppendingPathComponent:@"/Library/Caches"]
 
 #define JKSqliteCachePath @"/Users/wangchong/Desktop/"
 
+// 全局的数据库对象
 sqlite3 *ppDb = nil;
 
-@implementation JKSqliteKit
+
+@implementation JKSqliteDatabase
 
 /**
  用户机制，操作数据库（ DDL 增删改）
@@ -33,11 +36,11 @@ sqlite3 *ppDb = nil;
     
     // 2、执行sql语句
     /**
-       第1个参数：数据库对象
-       第2个参数：sql语句
-       第3个参数：查询时候用到的一个结果集闭包
-       第4个参数：用不到
-       第5个参数：用不到
+     第1个参数：数据库对象
+     第2个参数：sql语句
+     第3个参数：查询时候用到的一个结果集闭包
+     第4个参数：用不到
+     第5个参数：用不到
      */
     BOOL result = sqlite3_exec(ppDb, sql.UTF8String, nil, nil, nil) == SQLITE_OK;
     
@@ -90,7 +93,7 @@ sqlite3 *ppDb = nil;
         
         // 3.1、获取所有列的个数
         int columnCount = sqlite3_column_count(ppStmt);
-
+        
         // 3.2、遍历所有的列
         for (int i=0; i<columnCount; i++) {
             

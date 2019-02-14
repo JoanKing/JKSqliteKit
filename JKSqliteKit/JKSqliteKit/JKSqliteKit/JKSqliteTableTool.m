@@ -8,7 +8,7 @@
 
 #import "JKSqliteTableTool.h"
 #import "JKSqliteModel.h"
-#import "JKSqliteKit.h"
+#import "JKSqliteDatabase.h"
 @implementation JKSqliteTableTool
 
 /**
@@ -27,7 +27,7 @@
     NSString *queryCreateTableSqlString = [NSString stringWithFormat:@"select sql from sqlite_master where type = 'table' and name = '%@'",tableName];
     
     // 3.查询模型的sql语句
-    NSMutableDictionary *resultDic = [JKSqliteKit querySql:queryCreateTableSqlString witUid:uid].firstObject;
+    NSMutableDictionary *resultDic = [JKSqliteDatabase querySql:queryCreateTableSqlString witUid:uid].firstObject;
     /**
       resultDic={
       sql = "CREATE TABLE Student(studentName text,studentNumber integer,studentAge integer,studentScore real, primary key(studentNumber))";
