@@ -56,7 +56,7 @@
 +(BOOL)isUpdateTable:(Class)cls uid:(NSString *)uid{
    
     // 1.获取模型里面的所有成员变量的名字
-    NSArray *modelNames = [JKSqliteTableTool allTableSortedIvarNames:cls];
+    NSArray *modelNames = [JKSqliteModel allTableSortedIvarNames:cls];
     // 2.获取uid对应数据库里面对应表的字段数组
     NSArray *tableNames = [JKSqliteTableTool tableColumnNames:cls uid:uid];
     // 3.判断两个数组是否相等，返回响应的结果,取反：相等不需要更新，不相等才需要去更新
@@ -101,7 +101,7 @@
     
     // 4、根据主键把所有 旧表 中的数据更新到 新表 中
     // 旧表中字段名的数组
-    NSArray *oldTableNames = [JKSqliteTableTool allTableSortedIvarNames:cls];
+    NSArray *oldTableNames = [JKSqliteModel allTableSortedIvarNames:cls];
     // 获取x新模型的所有变量名
     NSArray *tmpTableNames = [JKSqliteTableTool tableColumnNames:cls uid:uid];
     // 根据主键 插入新表中有的字段

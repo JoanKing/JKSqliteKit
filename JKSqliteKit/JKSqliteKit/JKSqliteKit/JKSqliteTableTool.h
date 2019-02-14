@@ -22,15 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 +(NSArray *)tableColumnNames:(Class)cls uid:(NSString *)uid;
 
-#pragma mark 获取表中所有字段(已排序)
-/**
- 获取模型所有成员变量名(已排序)
- 
- @param cls 类（模型）
- @return 模型所有成员变量名(已排序)
- */
-+(NSArray *)allTableSortedIvarNames:(Class)cls;
-
 
 @end
 

@@ -94,22 +94,5 @@
     return namesArray;
 }
 
-/**
- 获取模型所有成员变量名(已排序)
- 
- @param cls 类（模型）
- @return 模型所有成员变量名(已排序)
- */
-+(NSArray *)allTableSortedIvarNames:(Class)cls{
-    
-    // 1、获取模型中所有成员变量的名字
-    NSDictionary *dict = [JKSqliteModel classIvarNameTypeDictionary:cls];
-    NSArray *keys = dict.allKeys;
-    // 不可变的数组，重新赋值
-    keys = [keys sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-        return [obj1 compare:obj2];
-    }];
-    return keys;
-}
 
 @end
