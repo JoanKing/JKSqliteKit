@@ -24,6 +24,7 @@
 		E2EE33382215416F00DA61FF /* JKSqliteTableTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EE33372215416F00DA61FF /* JKSqliteTableTool.m */; };
 		E2EE333A2215454300DA61FF /* JKSqliteTableToolTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EE33392215454300DA61FF /* JKSqliteTableToolTest.m */; };
 		E2EE33B92215B3C200DA61FF /* JKSqliteDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EE33B82215B3C200DA61FF /* JKSqliteDatabase.m */; };
+		E2EE33C022170EA500DA61FF /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EE33BF22170EA500DA61FF /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,9 @@
 		E2EE33392215454300DA61FF /* JKSqliteTableToolTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKSqliteTableToolTest.m; sourceTree = "<group>"; };
 		E2EE33B72215B3C200DA61FF /* JKSqliteDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKSqliteDatabase.h; sourceTree = "<group>"; };
 		E2EE33B82215B3C200DA61FF /* JKSqliteDatabase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKSqliteDatabase.m; sourceTree = "<group>"; };
+		E2EE33BA2215B4E100DA61FF /* JKSqliteKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKSqliteKit.h; sourceTree = "<group>"; };
+		E2EE33BE22170EA500DA61FF /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		E2EE33BF22170EA500DA61FF /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,8 @@
 				E221BDFC22140529002B8168 /* ViewController.m */,
 				E2342E162214FF11002AE0D7 /* Student.h */,
 				E2342E172214FF11002AE0D7 /* Student.m */,
+				E2EE33BE22170EA500DA61FF /* Person.h */,
+				E2EE33BF22170EA500DA61FF /* Person.m */,
 				E221BE2A22140565002B8168 /* JKSqliteKit */,
 				E221BDFE22140529002B8168 /* Main.storyboard */,
 				E221BE0122140529002B8168 /* Assets.xcassets */,
@@ -176,6 +182,7 @@
 				E2EE33362215416F00DA61FF /* JKSqliteTableTool.h */,
 				E2EE33372215416F00DA61FF /* JKSqliteTableTool.m */,
 				E2BC1C2B221518E800AAB89E /* JKSqliteProtocol.h */,
+				E2EE33BA2215B4E100DA61FF /* JKSqliteKit.h */,
 			);
 			path = JKSqliteKit;
 			sourceTree = "<group>";
@@ -324,6 +331,7 @@
 				E2342E1B2215031D002AE0D7 /* JKSqliteModelTool.m in Sources */,
 				E2EE33382215416F00DA61FF /* JKSqliteTableTool.m in Sources */,
 				E221BDFA22140528002B8168 /* AppDelegate.m in Sources */,
+				E2EE33C022170EA500DA61FF /* Person.m in Sources */,
 				E2342E152214FEF2002AE0D7 /* JKSqliteModel.m in Sources */,
 				E2342E182214FF11002AE0D7 /* Student.m in Sources */,
 			);

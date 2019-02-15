@@ -51,7 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark 把上面两个方法合成的字段组合成sql语句里面的 字段
 +(NSString *)columnNamesAndTypesStr:(Class)cls;
 
-#pragma mark 获取表中所有字段(已排序)
+#pragma mark 获取模型所有成员变量名(已排序)
 /**
  获取模型所有成员变量名(已排序)
  

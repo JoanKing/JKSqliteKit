@@ -94,5 +94,16 @@
     return namesArray;
 }
 
-
+/** 是否存在表格 */
++(BOOL)isTableExists:(Class)cls uid:(NSString *)uid{
+    
+    // 1.获取表名
+    NSString *tableName = [JKSqliteModel tableName:cls];
+    
+    // 2.获取通过查询数据库中所有的表的来获取相应的模型对应表的 sql 语句
+    NSString *queryCreateTableSqlString = [NSString stringWithFormat:@"select sql from sqlite_master where type = 'table' and name = '%@'",tableName];
+    // 3.查询模型的sql语句: 结果是所有表的数组
+    NSMutableArray *resultArray = [JKSqliteDatabase querySql:queryCreateTableSqlString witUid:uid];
+    return resultArray.count > 0;
+}
 @end

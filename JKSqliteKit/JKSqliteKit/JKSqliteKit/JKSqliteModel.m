@@ -159,7 +159,7 @@
              @"Q": @"integer", // long long
              @"B": @"integer", // bool
              
-             @"NSData": @"text",
+             @"NSData": @"blob",// 二进制
              @"NSDictionary": @"text",
              @"NSMutableDictionary": @"text",
              @"NSArray": @"text",

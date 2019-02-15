@@ -22,6 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 +(NSArray *)tableColumnNames:(Class)cls uid:(NSString *)uid;
 
+#pragma mark 是否存在表格
+/** 是否存在表格 */
++(BOOL)isTableExists:(Class)cls uid:(NSString *)uid;
 
 @end
 

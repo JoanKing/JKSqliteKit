@@ -27,10 +27,23 @@ NS_ASSUME_NONNULL_BEGIN
 // @property(nonatomic,assign) float studentScore;
 
 /** 身高 */
-@property(nonatomic,strong) NSString *studentHeight;
+@property(nonatomic,assign) float studentHeight;
 
 /** 测试忽略的名字 */
 @property(nonatomic,strong) NSString *testName;
+
+@property(nonatomic,strong) NSString *TT;
+
+/** 用户的爱好 */
+@property(nonatomic,strong) NSArray *studentlikes;
+
+/** 用户家人的名字信息 */
+// @property(nonatomic,strong) NSDictionary *studentPropleInfo;
+
+/** 朋友的名字 */
+@property(nonatomic,strong) NSArray *studentFriends;
+
+
 
 @end
 

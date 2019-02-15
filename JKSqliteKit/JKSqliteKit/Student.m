@@ -20,4 +20,9 @@
     return @[@"testName"];
 }
 
+//+(NSDictionary *)updateFieldNewNameReplaceOldName{
+//
+//    return @{@"studentAge":@"studentAge1"};
+//}
+
 @end

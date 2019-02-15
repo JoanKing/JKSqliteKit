@@ -19,6 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 @optional // 可以不用实现的方法
 +(NSArray *)ignoreColumnNames;
 
+@optional // 更新字段: 新字段名字 到 旧字段名字 的映射表(字典的key是新字段，字典的value是旧字段)
++(NSDictionary *)updateFieldNewNameReplaceOldName;
+
 @end
 
 NS_ASSUME_NONNULL_END

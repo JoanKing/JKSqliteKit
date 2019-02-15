@@ -10,6 +10,8 @@
 
 #import "sqlite3.h"
 
+// 数据库存储的位置，每一个用户都对应一个数据库
+
 // #define JKSqliteCachePath [NSHomeDirectory() stringByAppendingPathComponent:@"/Library/Caches"]
 
 #define JKSqliteCachePath @"/Users/wangchong/Desktop/"
@@ -38,10 +40,13 @@ sqlite3 *ppDb = nil;
     /**
      第1个参数：数据库对象
      第2个参数：sql语句
-     第3个参数：查询时候用到的一个结果集闭包
-     第4个参数：用不到
-     第5个参数：用不到
+     第3个参数：查询时候用到的一个结果集闭包，sqlite3_callback 是回调，当这条语句运行之后，sqlite3会去调用你提供的这个函数。
+     第4个参数：void * 是你所提供的指针，你能够传递不论什么一个指针參数到这里，这个參数终于会传到回调函数里面。假设不须要传递指针给回调函数。能够填NULL。等下我们再看回调函数的写法，以及这个參数的使用。
+     第5个参数：char ** errmsg 是错误信息。注意是指针的指针。sqlite3里面有非常多固定的错误信息。运行 sqlite3_exec之后，运行失败时能够查阅这个指针（直接 printf(“%s/n”,errmsg)）得到一串字符串信息，这串信息告诉你错在什么地方。sqlite3_exec函数通过改动你传入的指针的指针，把你提供的指针指向错误提示信息，这样sqlite3_exec函数外面就能够通过这个 char*得到详细错误提示。
+     说明：通常，sqlite3_callback 和它后面的 void * 这两个位置都能够填 NULL。
+     填NULL表示你不须要回调。比方你做 insert 操作，做 delete 操作,做update 操作，就没有必要使用回调。而当你做 select 时，就要使用回调。由于 sqlite3 把数据查出来，得通过回调告诉你查出了什么数据。
      */
+
     BOOL result = sqlite3_exec(ppDb, sql.UTF8String, nil, nil, nil) == SQLITE_OK;
     
     // 3、关闭数据库
@@ -178,12 +183,16 @@ sqlite3 *ppDb = nil;
             
             // 执行失败，进行回滚
             [self rollBackTransactionUid:uid];
+            
             return NO;
         }
     }
     
     // 走到这里说明都执行成功了，进行提交
     [self commitTransactionUid:uid];
+    
+    // 关闭数据库
+    [self closeDB];
     
     return YES;
 }
