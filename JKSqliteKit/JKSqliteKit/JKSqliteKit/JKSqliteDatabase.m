@@ -12,9 +12,10 @@
 
 // 数据库存储的位置，每一个用户都对应一个数据库
 
-// #define JKSqliteCachePath [NSHomeDirectory() stringByAppendingPathComponent:@"/Library/Caches"]
+#define JKSqliteCachePath [NSHomeDirectory() stringByAppendingPathComponent:@"/Library/Caches"]
 
-#define JKSqliteCachePath @"/Users/wangchong/Desktop/"
+
+// #define JKSqliteCachePath @"/Users/wangchong/Desktop/"
 
 // 全局的数据库对象
 sqlite3 *ppDb = nil;
