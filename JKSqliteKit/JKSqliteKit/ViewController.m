@@ -20,6 +20,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
   
+    NSLog(@"测试使用");
     
 }
 
